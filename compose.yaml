@@ -1,0 +1,15 @@
+networks:
+  neovim-local:
+
+services:
+  neovim-dev:
+    build: .
+    environment:
+      TEST_ENV: "Test ENV"
+    volumes:
+      - ./:/root/.config/nvim/
+    working_dir: /root/
+    stdin_open: true
+    tty: true
+    networks:
+      - neovim-local
