@@ -31,12 +31,8 @@ return require('packer').startup(function()
 
     -- New plugins as of 08/04/2023
     -- nvim.coc
-    -- use { 'neoclide/coc.nvim', branch = 'release', config = function()
-    --     require('coc').setup()
-    -- end}
+    use { 'neoclide/coc.nvim', branch = 'release' }
 
     -- ufo, for code folding
-    -- use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async', config = function()
-    --     require('ufo').setup()
-    -- end}
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 end)

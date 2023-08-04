@@ -51,3 +51,6 @@ require('nvim-tree').setup({
 })
 
 require('diffview').setup()
+require('coc')
+
+require('ufo').setup()

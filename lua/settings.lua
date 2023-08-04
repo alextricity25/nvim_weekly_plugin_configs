@@ -20,5 +20,12 @@ utils.opt('o', 'wildmode', 'list:longest')
 utils.opt('w', 'relativenumber', true)
 utils.opt('o', 'clipboard', 'unnamed,unnamedplus')
 
+--code folding
+utils.opt('o', 'foldcolumn', '1')
+utils.opt('o', 'foldlevel', 1)
+utils.opt('o', 'foldlevelstart', 99)
+utils.opt('o', 'foldenable', true)
+utils.opt('o', 'foldclose', 'all')
+
 -- Highlight on yank
 vim.cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
