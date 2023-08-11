@@ -29,3 +29,8 @@ utils.opt('o', 'foldclose', 'all')
 
 -- Highlight on yank
 vim.cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
+
+-- Indent blankline
+vim.opt.list = true
+vim.opt.listchars:append "eol:↴"
+

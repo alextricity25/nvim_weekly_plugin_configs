@@ -35,4 +35,8 @@ return require('packer').startup(function()
 
     -- ufo, for code folding
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+
+    -- Indent blankline
+    use {"lukas-reineke/indent-blankline.nvim"}
+
 end)
