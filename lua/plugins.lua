@@ -39,4 +39,7 @@ return require('packer').startup(function()
     -- Indent blankline
     use {"lukas-reineke/indent-blankline.nvim"}
 
+    -- Treesitter
+    use {"nvim-treesitter/nvim-treesitter"}
+
 end)
