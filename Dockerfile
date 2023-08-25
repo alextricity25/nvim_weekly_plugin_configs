@@ -25,6 +25,8 @@ RUN cd /root/neovim && make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neov
 RUN cd /root/neovim && make install
 RUN echo 'export PATH="$HOME/neovim/bin:$PATH"' >> /root/.bashrc
 RUN mkdir -p /root/.locl/share/nvim/site/autoload
+RUN echo 'alias vi=nvim' >> /root/.bashrc
 
 # Set WORKDIR
 WORKDIR /root/
+

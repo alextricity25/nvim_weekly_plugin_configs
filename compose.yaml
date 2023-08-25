@@ -3,6 +3,7 @@ networks:
 
 services:
   neovim-dev:
+    container_name: neovim-dev
     build: .
     environment:
       TEST_ENV: "Test ENV"

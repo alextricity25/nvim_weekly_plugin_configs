@@ -42,4 +42,15 @@ return require('packer').startup(function()
     -- Treesitter
     use {"nvim-treesitter/nvim-treesitter"}
 
+    -- treesj - 08/25/2023
+    use({
+        'Wansmer/treesj',
+        -- Treesitter functions depending on what 'parsers' are installed.
+        -- For more info, see:
+        -- https://github.com/nvim-treesitter/nvim-treesitter#language-parsers
+        -- 2023-08-05 16:26
+        requires = { 'nvim-treesitter/nvim-treesitter' },
+    })
+
+
 end)
