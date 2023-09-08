@@ -11,7 +11,7 @@ RUN yum install yum-utils -y
 RUN yum install tar zip findutils util-linux-user zsh iputils procps tree diffutils mlocate tmux vim git python3 curl rust cmake -y
 
 # Install node
-RUN dnf module enable nodejs:14 -y
+RUN dnf module enable nodejs:16 -y
 RUN dnf install nodejs -y
 # Install pyright
 RUN npm install pyright --global

@@ -52,5 +52,7 @@ return require('packer').startup(function()
         requires = { 'nvim-treesitter/nvim-treesitter' },
     })
 
+    use {'numToStr/Comment.nvim'}
+
 
 end)

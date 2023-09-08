@@ -104,3 +104,5 @@ require('treesj').setup({
     dot_repeat = true,
 })
 
+require('Comment').setup()
+
