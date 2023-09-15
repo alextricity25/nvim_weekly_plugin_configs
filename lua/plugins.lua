@@ -20,7 +20,7 @@ return require('packer').startup(function()
     use { 'treatybreaker/neogit', requires = 'nvim-lua/plenary.nvim', config = function()
         require('neogit').setup()
     end
-}
+    }
 
     -- diffview
     use { "sindrets/diffview.nvim",
@@ -54,5 +54,8 @@ return require('packer').startup(function()
 
     use {'numToStr/Comment.nvim'}
 
-
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} },
+    }
 end)

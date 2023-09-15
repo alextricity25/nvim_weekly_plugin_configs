@@ -4,11 +4,12 @@ FROM centos:8
 # https://haydenjames.io/fix-error-failed-to-download-metadata-for-repo-appstream-centos-8/
 RUN dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos -y
 RUN dnf distro-sync -y
+RUN dnf install epel-release epel-next-release -y
 
 # Install OS packages
 RUN yum install yum-utils -y
 #RUN yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
-RUN yum install tar zip findutils util-linux-user zsh iputils procps tree diffutils mlocate tmux vim git python3 curl rust cmake -y
+RUN yum install tar zip findutils util-linux-user zsh iputils procps tree diffutils mlocate tmux vim git python3 curl rust cmake ripgrep -y
 
 # Install node
 RUN dnf module enable nodejs:16 -y
