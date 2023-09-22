@@ -43,8 +43,7 @@ return require('packer').startup(function()
     use {"nvim-treesitter/nvim-treesitter"}
 
     -- treesj - 08/25/2023
-    use({
-        'Wansmer/treesj',
+    use({'Wansmer/treesj',
         -- Treesitter functions depending on what 'parsers' are installed.
         -- For more info, see:
         -- https://github.com/nvim-treesitter/nvim-treesitter#language-parsers
@@ -54,8 +53,11 @@ return require('packer').startup(function()
 
     use {'numToStr/Comment.nvim'}
 
-    use {
-        'nvim-telescope/telescope.nvim',
+    use {'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} },
+    }
+
+    use {'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 end)
