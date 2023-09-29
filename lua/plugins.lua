@@ -60,4 +60,9 @@ return require('packer').startup(function()
     use {'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+
+    -- harpoon
+    -- Plenary dependency isn't defined because Telescope already has it defined
+    -- as a dependency
+    use {'ThePrimeagen/harpoon'}
 end)

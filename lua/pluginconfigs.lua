@@ -15,7 +15,6 @@ require('nvim-tree').setup({
         cursorline = true,
         debounce_delay = 15,
         width = {},
-        hide_root_folder = false,
         side = "left",
         preserve_window_proportions = false,
         number = true,
@@ -56,12 +55,6 @@ require('coc')
 require('ufo').setup()
 
 
-require("indent_blankline").setup {
-    show_current_context = true, 
-    show_current_context_start = true, 
-    show_end_of_line = true,
-}
-
 require'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
     ensure_installed = {"lua", "bash", "fish"},
@@ -72,6 +65,21 @@ require'nvim-treesitter.configs'.setup {
     -- Automatically install missing parsers when entering buffer
     -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
     auto_install = false,
+}
+
+-- indent blankline
+require("ibl").setup {
+    scope = {
+        enabled = true,
+        show_start = true,
+        show_end = true,
+        injected_languages = true,
+        priority = 1024,
+    },
+    indent = {
+        highlight = {"LineNr"},
+        char = "|",
+    }
 }
 
  -- treesj
@@ -177,3 +185,34 @@ require('lualine').setup({
     extensions = {},
 })
 
+-- Harpoon
+require('harpoon').setup({
+    global_settings = {
+        -- sets the marks upon calling `toggle` on the ui, instead of require `:w`.
+        save_on_toggle = false,
+
+        -- saves the harpoon file upon every change. disabling is unrecommended.
+        save_on_change = true,
+
+        -- sets harpoon to run the command immediately as it's passed to the terminal when calling `sendCommand`.
+        enter_on_sendcmd = false,
+
+        -- closes any tmux windows harpoon that harpoon creates when you close Neovim.
+        tmux_autoclose_windows = false,
+
+        -- filetypes that you want to prevent from adding to the harpoon list menu.
+        excluded_filetypes = { "harpoon" },
+
+        -- set marks specific to each git branch inside git repository
+        -- Each branch will have it's own set of marked files
+        mark_branch = true,
+
+        -- enable tabline with harpoon marks
+        tabline = false,
+        tabline_prefix = "   ",
+        tabline_suffix = "   ",
+    }
+})
+
+-- Harpoon telescope extension
+require('telescope').load_extension('harpoon')

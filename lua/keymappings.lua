@@ -29,3 +29,9 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+-- harpoon
+vim.keymap.set('n', 'hx', require('harpoon.mark').add_file)
+vim.keymap.set('n', 'hn', require('harpoon.ui').nav_next)
+vim.keymap.set('n', 'hp', require('harpoon.ui').nav_prev)
+utils.map('n', [[hm]], ':Telescope harpoon marks<CR>')

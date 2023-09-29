@@ -20,6 +20,5 @@ require('pluginconfigs')
 -- Colorscheme
 require('colorscheme')
 
-
 -- Key mappings
 require('keymappings')
