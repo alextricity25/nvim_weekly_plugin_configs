@@ -35,3 +35,6 @@ vim.keymap.set('n', 'hx', require('harpoon.mark').add_file)
 vim.keymap.set('n', 'hn', require('harpoon.ui').nav_next)
 vim.keymap.set('n', 'hp', require('harpoon.ui').nav_prev)
 utils.map('n', [[hm]], ':Telescope harpoon marks<CR>')
+
+-- bufferline
+utils.map('n', [[<leader>bl]], ':BufferLinePick<CR>')

@@ -65,4 +65,7 @@ return require('packer').startup(function()
     -- Plenary dependency isn't defined because Telescope already has it defined
     -- as a dependency
     use {'ThePrimeagen/harpoon'}
+
+    -- bufferline
+    use {'akinsho/bufferline.nvim', tag = 'v4.4.0'}
 end)

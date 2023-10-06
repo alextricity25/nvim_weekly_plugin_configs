@@ -5,10 +5,7 @@ require("toggleterm").setup {
     size = 20}
 
 require('nvim-tree').setup({
-    filters = {
-        dotfiles = false,
-        git_ignored = false,
-    },
+    filters = { dotfiles = false, git_ignored = false },
     auto_reload_on_write = true,
       view = {
         centralize_selection = false,
@@ -21,11 +18,7 @@ require('nvim-tree').setup({
         relativenumber = true,
         signcolumn = "yes",
     },
-    update_focused_file = {
-        enable = true,
-        update_root = false,
-        ignore_list = {},
-    },
+    update_focused_file = {enable = true, update_root = false, ignore_list = {}},
     renderer = {
         add_trailing = false,
         group_empty = false,
@@ -216,3 +209,19 @@ require('harpoon').setup({
 
 -- Harpoon telescope extension
 require('telescope').load_extension('harpoon')
+
+-- Bufferline
+require("bufferline").setup {
+  options = {
+    mode = 'buffers',
+    -- diagnostics = 'coc',
+    offsets = {
+      {
+        filetype = "NvimTree",
+        text = "File Explorer",
+        highlight = "Directory",
+        separator = true,
+      }
+    },
+  },
+}
