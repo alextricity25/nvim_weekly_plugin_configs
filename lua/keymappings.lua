@@ -31,10 +31,21 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- harpoon
-vim.keymap.set('n', 'hx', require('harpoon.mark').add_file)
-vim.keymap.set('n', 'hn', require('harpoon.ui').nav_next)
-vim.keymap.set('n', 'hp', require('harpoon.ui').nav_prev)
-utils.map('n', [[hm]], ':Telescope harpoon marks<CR>')
+-- vim.keymap.set('n', '<leader>hx', require('harpoon.mark').add_file)
+vim.keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next)
+vim.keymap.set('n', '<leader>hp', require('harpoon.ui').nav_prev)
+utils.map('n', [[<leader>hm]], ':Telescope harpoon marks<CR>')
+
+-- Harpoon Which-key mappings
+local wk = require("which-key")
+wk.register({
+    -- The first key you are pressing
+    h = {
+        name  = "harpoon",
+        -- the second key
+        x = { function() require('harpoon.mark').add_file() end, "Mark file" }
+    },
+}, { prefix = "<leader>" })
 
 -- bufferline
 utils.map('n', [[<leader>bl]], ':BufferLinePick<CR>')

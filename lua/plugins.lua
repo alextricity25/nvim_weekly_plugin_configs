@@ -37,7 +37,9 @@ return require('packer').startup(function()
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
     -- Indent blankline
-    use {"lukas-reineke/indent-blankline.nvim"}
+    use {"lukas-reineke/indent-blankline.nvim",
+        tag = "v2.20.8",
+    }
 
     -- Treesitter
     use {"nvim-treesitter/nvim-treesitter"}
@@ -68,4 +70,7 @@ return require('packer').startup(function()
 
     -- bufferline
     use {'akinsho/bufferline.nvim', tag = 'v4.4.0'}
+
+    -- which-key
+    use {'folke/which-key.nvim', tag = 'v1.5.1'}
 end)

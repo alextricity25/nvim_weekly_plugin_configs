@@ -34,3 +34,7 @@ vim.cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
 vim.opt.list = true
 vim.opt.listchars:append "eol:↴"
 
+-- which-key
+vim.o.timeout = true
+vim.o.timeoutlen = 300
+vim.o.mouse = ''
