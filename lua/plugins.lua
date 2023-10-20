@@ -73,4 +73,7 @@ return require('packer').startup(function()
 
     -- which-key
     use {'folke/which-key.nvim', tag = 'v1.5.1'}
+
+    -- flask
+    use {'folke/flash.nvim', tag = 'v1.18.2'}
 end)

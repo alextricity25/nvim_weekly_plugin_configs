@@ -13,7 +13,7 @@ RUN yum install tar zip findutils util-linux-user zsh iputils procps tree diffut
 
 # Install node
 RUN dnf module enable nodejs:16 -y
-RUN dnf install nodejs -y
+RUN dnf install nodejs xclip -y
 # Install pyright
 RUN npm install pyright --global
 

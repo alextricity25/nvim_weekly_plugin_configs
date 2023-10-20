@@ -259,3 +259,5 @@ require("which-key").setup {
         zindex = 1000, -- positive value to position WhichKey above other floating windows.
     },
 }
+
+require("flash").setup({})
