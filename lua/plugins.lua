@@ -76,4 +76,14 @@ return require('packer').startup(function()
 
     -- flask
     use {'folke/flash.nvim', tag = 'v1.18.2'}
+
+    --nvim-cmp
+    use {'hrsh7th/cmp-buffer'}
+    use {'hrsh7th/cmp-path'}
+    use {'hrsh7th/cmp-cmdline'}
+    use {'hrsh7th/nvim-cmp'}
+
+    use {'hrsh7th/cmp-vsnip'}
+    use {'hrsh7th/vim-vsnip'}
+    use {'rafamadriz/friendly-snippets'}
 end)

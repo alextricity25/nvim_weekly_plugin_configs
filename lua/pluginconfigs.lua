@@ -43,20 +43,30 @@ require("toggleterm").setup {
     })
 
 require('diffview').setup()
-require('coc')
+-- require('coc')
 
 require('ufo').setup()
 
 
 require'nvim-treesitter.configs'.setup {
-    -- A list of parser names, or "all" (the five listed parsers should always be installed)
-    ensure_installed = {"lua", "bash", "fish"},
+    -- A list of parser names, or 
+    -- "all" (the five listed parsers 
+    -- should always be installed)
+    ensure_installed = {
+        "bash",
+        "fish",
+    },
 
-    -- Install parsers synchronously (only applied to `ensure_installed`)
+    -- Install parsers synchronously
+    -- (only applied to 
+    -- `ensure_installed`)
     sync_install = false,
 
-    -- Automatically install missing parsers when entering buffer
-    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+    -- Automatically install missing 
+    -- parsers when entering buffer
+    -- Recommendation: set to false 
+    -- if you don't have `tree-sitter` 
+    -- CLI installed locally
     auto_install = false,
 }
 
@@ -261,3 +271,50 @@ require("which-key").setup {
 }
 
 require("flash").setup({})
+
+
+--nvim-cmp
+local cmp = require('cmp')
+cmp.setup({
+    snippet = {
+        -- REQUIRED - you must specify a snippet engine
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+        end,
+    },
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    }),
+    sources = cmp.config.sources({
+        { name = 'vsnip' }, -- For ultisnips users.
+    }, {
+        { name = 'buffer' },
+    })
+})
+--
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
+})
+--
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        { name = 'cmdline' }
+    })
+})
+
