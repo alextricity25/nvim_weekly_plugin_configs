@@ -30,6 +30,14 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+wk.register({
+    -- define key mappings for telescope
+    f = {
+        name = "telescope",
+        f = { function require('telescope.builtin').fild_files end },
+    },
+}, { prefix = "<leader>" })
+
 -- harpoon
 -- vim.keymap.set('n', '<leader>hx', require('harpoon.mark').add_file)
 vim.keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next)
@@ -60,3 +68,4 @@ wk.register({
         r = { function() require("flash").treesitter_search() end, "Flash Treesitter Search" },
     },
 }, { prefix = "<leader>" })
+
