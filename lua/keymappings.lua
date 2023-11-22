@@ -1,4 +1,5 @@
 local utils = require('utils')
+local wk = require("which-key")
 -- ToggleTerm Key Mappings
 utils.map('i', [[<C-\>]], '<cmd>exe v:count1 . "ToggleTerm size=80 direction=vertical"<CR>')
 utils.map('n', [[<C-\>]], '<cmd>exe v:count1 . "ToggleTerm size=80 direction=vertical"<CR>')
@@ -34,7 +35,7 @@ wk.register({
     -- define key mappings for telescope
     f = {
         name = "telescope",
-        f = { function require('telescope.builtin').fild_files end },
+        f = { function() require('telescope.builtin').find_files() end },
     },
 }, { prefix = "<leader>" })
 
@@ -45,7 +46,6 @@ vim.keymap.set('n', '<leader>hp', require('harpoon.ui').nav_prev)
 utils.map('n', [[<leader>hm]], ':Telescope harpoon marks<CR>')
 
 -- Harpoon Which-key mappings
-local wk = require("which-key")
 wk.register({
     -- The first key you are pressing
     h = {
