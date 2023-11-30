@@ -51,12 +51,18 @@ wk.register({
     h = {
         name  = "harpoon",
         -- the second key
-        x = { function() require('harpoon.mark').add_file() end, "Mark file" }
+        x = { function()
+            require('harpoon.mark').add_file()
+        end, "Mark file" }
     },
 }, { prefix = "<leader>" })
 
 -- bufferline
-utils.map('n', [[<leader>bl]], ':BufferLinePick<CR>')
+utils.map(
+    'n',
+    [[<leader>bl]],
+    ':BufferLinePick<CR>'
+)
 
 -- flash
 wk.register({

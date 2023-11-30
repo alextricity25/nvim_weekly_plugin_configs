@@ -22,4 +22,3 @@ require('colorscheme')
 
 -- Key mappings
 require('keymappings')
-
