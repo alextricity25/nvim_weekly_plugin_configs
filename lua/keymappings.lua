@@ -31,14 +31,6 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
-wk.register({
-    -- define key mappings for telescope
-    f = {
-        name = "telescope",
-        f = { function() require('telescope.builtin').find_files() end },
-    },
-}, { prefix = "<leader>" })
-
 -- harpoon
 -- vim.keymap.set('n', '<leader>hx', require('harpoon.mark').add_file)
 vim.keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next)
@@ -74,4 +66,22 @@ wk.register({
         r = { function() require("flash").treesitter_search() end, "Flash Treesitter Search" },
     },
 }, { prefix = "<leader>" })
+
+-- gp (Chat GPT)
+wk.register({
+  u = {
+    name = "Chat GPT",
+    g = { "<cmd>GpChatToggle popup<cr>", "Toggle Chat" },
+    r = { "<cmd>GpChatRespond<cr>", "Respond" },
+    n = { "<cmd>GpChatNew popup<cr>", "New Chat" },
+  }
+}, { mode="n", prefix="<leader>" })
+
+wk.register({
+  u = {
+    name = "Chat GPT Visual",
+    g = { ":<C-u>'<,'>GpChatToggle popup<cr>", "Visual Popup Chat" },
+    n = { ":<C-u>'<,'>GpChatNew popup<cr>", "Visual New Chat" },
+  },
+}, { mode="v", prefix="<leader>" })
 

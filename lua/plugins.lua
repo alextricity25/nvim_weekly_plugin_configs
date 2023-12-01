@@ -89,4 +89,7 @@ return require('packer').startup(function()
 
     -- vim surround
     use {'tpope/vim-surround'}
+
+    -- gp
+    use {'robitx/gp.nvim'}
 end)
