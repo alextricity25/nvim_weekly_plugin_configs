@@ -43,9 +43,6 @@ require('nvim-tree').setup({
     }
 })
 
-require('diffview').setup()
--- require('coc')
-
 require('ufo').setup()
 
 
@@ -271,7 +268,7 @@ require("which-key").setup {
     },
 }
 
-require("flash").setup({})
+-- require("flash").setup({})
 
 
 --nvim-cmp
@@ -352,7 +349,7 @@ cmp.setup.cmdline(':', {
 })
 
 -- gp
-require('gp').setup({
-    openai_api_key = os.getenv("OPENAI_API_KEY"),
-    -- model = {model = "gpt-4"},
-})
+-- require('gp').setup({
+--     openai_api_key = os.getenv("OPENAI_API_KEY"),
+--     -- model = {model = "gpt-4"},
+-- })
