@@ -25,10 +25,12 @@ return {
     {'hrsh7th/nvim-cmp'},
     {'hrsh7th/cmp-vsnip'},
     {'hrsh7th/vim-vsnip'},
-    -- {'rafamadriz/friendly-snippets'},
+    {'rafamadriz/friendly-snippets'},
     -- vim surround
     {'tpope/vim-surround'},
     -- gp
-    -- {'robitx/gp.nvim'},
+    {'robitx/gp.nvim'},
+    {'neovim/nvim-lspconfig'},
+    {'hrsh7th/cmp-nvim-lsp'},
 }
 

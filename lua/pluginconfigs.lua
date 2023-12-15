@@ -325,6 +325,7 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = 'vsnip' }, -- For ultisnips users.
+        { name = 'nvim_lsp' },
     }, {
         { name = 'buffer' },
     })
@@ -349,7 +350,9 @@ cmp.setup.cmdline(':', {
 })
 
 -- gp
--- require('gp').setup({
---     openai_api_key = os.getenv("OPENAI_API_KEY"),
---     -- model = {model = "gpt-4"},
--- })
+require('gp').setup({
+    openai_api_key = os.getenv("OPENAI_API_KEY"),
+})
+-- lsp config
+require'lspconfig'.lua_ls.setup{}
+require('lspmappings')
