@@ -22,7 +22,6 @@ require('lazy').setup("plugins_lazy")
 
 -- Apply general vim settings
 require('settings')
-
 -- Configure plugins
 require('pluginconfigs')
 

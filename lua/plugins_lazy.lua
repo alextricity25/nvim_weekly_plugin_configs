@@ -30,6 +30,15 @@ return {
     {'tpope/vim-surround'},
     -- gp
     {'robitx/gp.nvim'},
+    -- Make sure the following LSP plugins are in this order. 
+    {
+        'williamboman/mason.nvim',
+        lazy = false,
+    },
+    {
+        'williamboman/mason-lspconfig.nvim',
+        lazy = false,
+    },
     {'neovim/nvim-lspconfig'},
     {'hrsh7th/cmp-nvim-lsp'},
 }
