@@ -2,6 +2,7 @@ vim.g.mapleader = ' '
 local fn = vim.fn
 local execute = vim.api.nvim_command
 
+
 -- Initialize Lazy Plugin Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -14,7 +15,6 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
-
 -- Setting up lazy, and telling it where `plugins` table is.
 -- We manage the `plugins` in another file
 vim.opt.rtp:prepend(lazypath)
