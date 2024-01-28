@@ -377,3 +377,13 @@ require("mason-lspconfig").setup_handlers {
 }
 
 require('lspmappings')
+
+-- spectre
+require('spectre').setup({
+    result_padding = '',
+    default = {
+        replace = {
+            cmd = "sed"
+        }
+    }
+})
