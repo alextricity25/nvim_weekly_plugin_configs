@@ -273,7 +273,7 @@ require("which-key").setup {
     },
 }
 
--- require("flash").setup({})
+require("flash").setup({})
 
 
 --nvim-cmp
@@ -378,7 +378,6 @@ require("mason-lspconfig").setup_handlers {
 
 require('lspmappings')
 
--- spectre
 require('spectre').setup({
     result_padding = '',
     default = {
