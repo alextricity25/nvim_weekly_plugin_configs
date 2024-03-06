@@ -1,7 +1,5 @@
+-- Setting up leader key
 vim.g.mapleader = ' '
-local fn = vim.fn
-local execute = vim.api.nvim_command
-
 
 -- Initialize Lazy Plugin Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -19,14 +17,11 @@ end
 -- We manage the `plugins` in another file
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup("plugins_lazy")
-
 -- Apply general vim settings
 require('settings')
 -- Configure plugins
 require('pluginconfigs')
-
 -- Colorscheme
 require('colorscheme')
-
 -- Key mappings
 require('keymappings')

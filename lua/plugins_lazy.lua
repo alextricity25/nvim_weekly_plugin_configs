@@ -12,12 +12,24 @@ return {
     -- treesj - 08/25/2023
     { 'Wansmer/treesj' },
     { 'numToStr/Comment.nvim' },
-    { 'nvim-telescope/telescope.nvim',       dependencies = { 'nvim-lua/plenary.nvim' } },
+    {
+        'nvim-telescope/telescope.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+    },
 
-    { 'nvim-lualine/lualine.nvim',           dependencies = { 'nvim-tree/nvim-web-devicons' } },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+    },
     { 'ThePrimeagen/harpoon' },
-    { 'akinsho/bufferline.nvim',             tag = 'v4.4.0' },
-    { 'folke/which-key.nvim',                tag = 'v1.5.1' },
+    {
+        'akinsho/bufferline.nvim',
+        tag = 'v4.4.0',
+    },
+    {
+        'folke/which-key.nvim',
+        tag = 'v1.5.1',
+    },
     { 'folke/flash.nvim' },
     --nvim-cmp
     { 'hrsh7th/cmp-buffer' },

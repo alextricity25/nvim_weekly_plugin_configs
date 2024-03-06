@@ -38,4 +38,5 @@ vim.opt.listchars:append "eol:↴"
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.o.mouse = ''
+-- undotree
 vim.o.undofile = true
