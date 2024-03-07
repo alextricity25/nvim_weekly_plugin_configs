@@ -55,7 +55,7 @@ utils.map(
     [[<leader>bl]],
     ':BufferLinePick<CR>'
 )
-
+print("hello")
 -- flash
 wk.register({
     -- flash search
@@ -78,12 +78,17 @@ wk.register({
 }, { mode="n", prefix="<leader>" })
 
 wk.register({
-  u = {
-    name = "Chat GPT Visual",
-    g = { ":<C-u>'<,'>GpChatToggle popup<cr>", "Visual Popup Chat" },
-    n = { ":<C-u>'<,'>GpChatNew popup<cr>", "Visual New Chat" },
-  },
-}, { mode="v", prefix="<leader>" })
+    g = {
+        name = "Gitsigns",
+        s = { "<cmd>lua require('gitsigns').stage_hunk()<cr>", "Stage Hunk" },
+        u = { "<cmd>lua require('gitsigns').undo_stage_hunk()<cr>", "Undo Stage Hunk" },
+        r = { "<cmd>lua require('gitsigns').reset_hunk()<cr>", "Reset Hunk" },
+        p = { "<cmd>lua require('gitsigns').preview_hunk()<cr>", "Preview Hunk" },
+        b = { "<cmd>lua require('gitsigns').blame_line()<cr>", "Blame Line" },
+        f = { "<cmd>lua require('gitsigns').diffthis('~1')<cr>", "Diff This" },
+        n = { "<cmd>lua require('gitsigns').next_hunk()<cr>", "Blame Line" },
+    }
+}, { prefix = "<leader>" })
 
 -- spectre
 vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
@@ -98,5 +103,4 @@ vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual(
 vim.keymap.set('n', '<leader>sf', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
     desc = "Search on current file"
 })
-
 

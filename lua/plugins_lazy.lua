@@ -67,4 +67,6 @@ return {
     },
     'nvim-pack/nvim-spectre',
     'mbbill/undotree',
+    'lewis6991/gitsigns.nvim',
+
 }
