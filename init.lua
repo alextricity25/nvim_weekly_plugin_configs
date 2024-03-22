@@ -25,3 +25,11 @@ require('pluginconfigs')
 require('colorscheme')
 -- Key mappings
 require('keymappings')
+
+function printHelloTenTimes()
+    for i=1, 10 do
+        print("hello")
+    end
+end
+
+printHelloTenTimes();

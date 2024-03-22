@@ -104,3 +104,17 @@ vim.keymap.set('n', '<leader>sf', '<cmd>lua require("spectre").open_file_search(
     desc = "Search on current file"
 })
 
+wk.register({
+  l = {
+    name = "Lspsaga",
+    c = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
+    o = { "<cmd>Lspsaga outline<cr>", "Outline" },
+    r = { "<cmd>Lspsaga rename<cr>", "Rename" },
+    d = { "<cmd>Lspsaga goto_definition<cr>", "Lsp GoTo Definition" },
+    f = { "<cmd>Lspsaga finder<cr>", "Lsp Finder" },
+    p = { "<cmd>Lspsaga preview_definition<cr>", "Preview Definition" },
+    s = { "<cmd>Lspsaga signature_help<cr>", "Signature Help" },
+    w = { "<cmd>Lspsaga show_workspace_diagnostics<cr>", "Show Workspace Diagnostics" },
+  }
+}, { prefix = "<leader>" })
+

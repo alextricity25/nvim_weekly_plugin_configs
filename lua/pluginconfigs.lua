@@ -389,3 +389,9 @@ require('spectre').setup({
 
 require('gitsigns').setup({})
 vim.cmd "set statusline+=%{get(b:,'gitsigns_status','')}"
+
+require('lspsaga').setup({
+  lightbulb = {
+    enable = false,
+  },
+})
