@@ -13,6 +13,7 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 -- Setting up lazy, and telling it where `plugins` table is.
 -- We manage the `plugins` in another file
 vim.opt.rtp:prepend(lazypath)
@@ -25,11 +26,3 @@ require('pluginconfigs')
 require('colorscheme')
 -- Key mappings
 require('keymappings')
-
-function printHelloTenTimes()
-    for i=1, 10 do
-        print("hello")
-    end
-end
-
-printHelloTenTimes();

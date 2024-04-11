@@ -69,4 +69,5 @@ return {
     'mbbill/undotree',
     'lewis6991/gitsigns.nvim',
     'nvimdev/lspsaga.nvim',
+    { "folke/neodev.nvim", opts = {} },
 }
