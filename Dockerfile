@@ -22,7 +22,8 @@ RUN npm install pyright --global
 # Set up neovim
 ## Commented on 05/21/2023 So that we can build neovim from source instead
 RUN git clone https://github.com/neovim/neovim.git /root/neovim
-RUN cd /root/neovim && make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
+## Install version v0.9.5 and build from source
+RUN cd /root/neovim && git checkout v0.9.5 && make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
 RUN cd /root/neovim && make install
 RUN echo 'export PATH="$HOME/neovim/bin:$PATH"' >> /root/.bashrc
 RUN mkdir -p /root/.locl/share/nvim/site/autoload

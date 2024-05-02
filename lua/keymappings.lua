@@ -14,10 +14,11 @@ utils.map('n', [[<C-n>]], ':NvimTreeToggle<CR>')
 
 -- toggle term
 function _G.set_terminal_keymaps()
-    local opts = {noremap = true}
+    local opts = { noremap = true }
     vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
     vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
 end
+
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 -- ufo code folding
@@ -41,9 +42,9 @@ utils.map('n', [[<leader>hm]], ':Telescope harpoon marks<CR>')
 wk.register({
     -- The first key you are pressing
     h = {
-        name  = "harpoon",
+        name = "harpoon",
         -- the second key
-        x = { function()
+        x    = { function()
             require('harpoon.mark').add_file()
         end, "Mark file" }
     },
@@ -69,13 +70,13 @@ wk.register({
 
 -- gp (Chat GPT)
 wk.register({
-  u = {
-    name = "Chat GPT",
-    g = { "<cmd>GpChatToggle popup<cr>", "Toggle Chat" },
-    r = { "<cmd>GpChatRespond<cr>", "Respond" },
-    n = { "<cmd>GpChatNew popup<cr>", "New Chat" },
-  }
-}, { mode="n", prefix="<leader>" })
+    u = {
+        name = "Chat GPT",
+        g = { "<cmd>GpChatToggle popup<cr>", "Toggle Chat" },
+        r = { "<cmd>GpChatRespond<cr>", "Respond" },
+        n = { "<cmd>GpChatNew popup<cr>", "New Chat" },
+    }
+}, { mode = "n", prefix = "<leader>" })
 
 wk.register({
     g = {
@@ -105,16 +106,35 @@ vim.keymap.set('n', '<leader>sf', '<cmd>lua require("spectre").open_file_search(
 })
 
 wk.register({
-  l = {
-    name = "Lspsaga",
-    c = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
-    o = { "<cmd>Lspsaga outline<cr>", "Outline" },
-    r = { "<cmd>Lspsaga rename<cr>", "Rename" },
-    d = { "<cmd>Lspsaga goto_definition<cr>", "Lsp GoTo Definition" },
-    f = { "<cmd>Lspsaga finder<cr>", "Lsp Finder" },
-    p = { "<cmd>Lspsaga preview_definition<cr>", "Preview Definition" },
-    s = { "<cmd>Lspsaga signature_help<cr>", "Signature Help" },
-    w = { "<cmd>Lspsaga show_workspace_diagnostics<cr>", "Show Workspace Diagnostics" },
-  }
+    l = {
+        name = "Lspsaga",
+        c = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
+        o = { "<cmd>Lspsaga outline<cr>", "Outline" },
+        r = { "<cmd>Lspsaga rename<cr>", "Rename" },
+        d = { "<cmd>Lspsaga goto_definition<cr>", "Lsp GoTo Definition" },
+        f = { "<cmd>Lspsaga finder<cr>", "Lsp Finder" },
+        p = { "<cmd>Lspsaga preview_definition<cr>", "Preview Definition" },
+        s = { "<cmd>Lspsaga signature_help<cr>", "Signature Help" },
+        w = { "<cmd>Lspsaga show_workspace_diagnostics<cr>", "Show Workspace Diagnostics" },
+    }
 }, { prefix = "<leader>" })
 
+local function visual_cursors_with_delay()
+  -- Execute the vm-visual-cursors command.
+  vim.cmd('silent! execute "normal! \\<Plug>(VM-Visual-Cursors)"')
+  -- Introduce delay via VimScript's 'sleep' (set to 500 milliseconds here).
+  vim.cmd('sleep 200m')
+  -- Press 'A' in normal mode after the delay.
+  vim.cmd('silent! execute "normal! A"')
+end
+
+wk.register({
+  m = {
+    name = "Visual Multi",
+    a = { "<Plug>(VM-Select-All)<Tab>", "Select All", mode = { "n" } },
+    r = { "<Plug>(VM-Start-Regex-Search)", "Start Regex Search", mode = { "n" } },
+    p = { "<Plug>(VM-Add-Cursor-At-Pos)", "Add Cursor At Pos", mode = { "n" } },
+    v = { visual_cursors_with_delay, "Visual Cursors", mode = { "v" } },
+    o = { "<Plug>(VM-Toggle-Mappings)", "Toggle Mapping", mode = { "n" } },
+  }
+}, { prefix = "<leader>" })
